@@ -10,5 +10,19 @@
             "extract_dir": "gaffer-1.3.2.0-windows"
         }
     },
-    "bin": ["bin/gaffer.cmd"]
+    "bin": [
+        "bin/gaffer.cmd",
+        "bin/usdcat.ps1",
+        "bin/usdtree.ps1",
+        "bin/oiiotool.ps1",
+        "bin/maketx.ps1",
+        "bin/oslinfo.ps1",
+        "bin/abcconvert.ps1",
+        "bin/abcls.ps1",
+        "bin/oslc.ps1"
+    ],
+    "pre_install": [
+        ". $bucketsdir\\mtb\\bin\\generate_bin_wrapper.ps1",
+        "GenerateBinaryWrapper -InstallDir $dir -Binaries @('bin\\usdcat.exe', 'bin\\usdtree.exe', 'bin\\oiiotool.exe', 'bin\\maketx.exe','bin\\oslinfo.exe', 'bin\\abcconvert.exe', 'bin\\abcls.exe', 'bin\\oslc.exe') -Paths @(\"$dir\\lib\")"
+    ]
 }
