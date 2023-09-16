@@ -1,22 +1,39 @@
 # MTB bin template script - paths will be filled in by post_install
 
 # Check if MTB_DEBUG environment variable is set to 1
-$debug = [System.Environment]::GetEnvironmentVariable('MTB_DEBUG', 'User') -eq '1'
+$debug = $env:MTB_DEBUG -eq "1"
 
-# Adding conditional debug outputs
-if ($debug) {
-    Write-Output "Wrapper started for: {{ACTUAL_BINARY_NAME}}"
+# Helper function for colored output
+function Write-DebugOutput {
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$Message,
+        [System.ConsoleColor]$ForegroundColor = [System.ConsoleColor]::Yellow,
+        [System.ConsoleColor]$BackgroundColor = [System.ConsoleColor]::Black
+    )
+    Write-Host $Message -ForegroundColor $ForegroundColor -BackgroundColor $BackgroundColor
 }
 
 # Define the paths to be added (these will be filled in during post_install)
 $pathsToAdd = @("{{PATHS_TO_BE_ADDED}}")
 
+if ($debug) {
+    Write-DebugOutput "====================== MTB DEBUG MODE: ON ======================" -ForegroundColor Cyan
+    Write-DebugOutput "PATHS TO ADD: $pathsToAdd"
+    Write-DebugOutput "ACTUAL BINARY: {{ACTUAL_BINARY_NAME}}"
+    Write-DebugOutput "================================================================" -ForegroundColor Cyan
+}
+
 # Temporarily append the folder paths to the current session's PATH variable
 foreach ($path in $pathsToAdd) {
     $env:Path = "$env:Path;$path"
     if ($debug) {
-        Write-Output "Appended to PATH: $path"
+        Write-DebugOutput "Appended to PATH: $path"
     }
+}
+
+if ($debug) {
+    Write-DebugOutput "====================== RUNNING THE COMMAND =====================" -ForegroundColor Cyan
 }
 
 # Run the actual binary
@@ -26,7 +43,7 @@ foreach ($path in $pathsToAdd) {
 $exitCode = $LASTEXITCODE
 
 if ($debug) {
-    Write-Output "Exit code from '{{ACTUAL_BINARY_NAME}}' is: $exitCode"
+    Write-DebugOutput "Exit code from 'C:\Users\User\scoop\apps\gaffer\1.3.2.0\\bin\\oslc.exe' is: $exitCode"
 }
 
 # Exit with the same code as the actual binary

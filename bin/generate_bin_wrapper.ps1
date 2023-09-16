@@ -11,6 +11,6 @@ function GenerateBinaryWrapper {
         $pathsString = $Paths -join '","'
         $newContent = $content -replace '{{PATHS_TO_BE_ADDED}}', $pathsString
         $newContent = $newContent -replace '{{ACTUAL_BINARY_NAME}}', "$InstallDir\\bin\\$binary"
-        Set-Content -Path ($InstallDir + '\\bin\\' + $binary.Replace('.exe', '.ps1')) -Value $newContent
+        Set-Content -Path ($InstallDir + '\\' + $binary.Replace('.exe', '.ps1')) -Value $newContent
     }
 }
