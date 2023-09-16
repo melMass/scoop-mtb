@@ -1,11 +1,10 @@
 function GenerateBinaryWrapper {
     param (
-        [string]$TemplatePath,
         [string]$InstallDir,
         [string[]]$Binaries,
         [string[]]$Paths
     )
-
+    $templatePath = "$PSScriptRoot\\template\\bin_wrapper.ps1"
     $content = Get-Content -Path $TemplatePath
 
     foreach ($binary in $Binaries) {
