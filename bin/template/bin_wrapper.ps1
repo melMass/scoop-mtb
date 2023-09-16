@@ -43,7 +43,7 @@ if ($debug) {
 $exitCode = $LASTEXITCODE
 
 if ($debug) {
-    Write-DebugOutput "Exit code from 'C:\Users\User\scoop\apps\gaffer\1.3.2.0\\bin\\oslc.exe' is: $exitCode"
+    Write-DebugOutput "Exit code from '{{ACTUAL_BINARY_NAME}}' is: $exitCode"
 }
 
 # Exit with the same code as the actual binary
