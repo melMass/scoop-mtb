@@ -1,0 +1,35 @@
+{
+    "version": "1.0.0",
+    "description": "Geist is a new font family for Vercel, created by Vercel in collaboration with Basement Studio.",
+    "homepage": "https://vercel.com/font",
+    "license": "OFL-1.1",
+    "url": [
+        "https://github.com/vercel/geist-font/releases/download/1.0.0/Geist.Mono.zip",
+        "https://github.com/vercel/geist-font/releases/download/1.0.0/Geist.zip"
+    ],
+    "hash": [
+        "804891b853484797101878e8638391d1d3b1c7b0673a3b0e89a4423664d016d2",
+        "3d19900ade9c33ba4773f29dcf77b6563335039440de60af3d34b050911eac44"
+    ],
+    "checkver": {
+        "github": "https://github.com/vercel/geist-font"
+    },
+    "autoupdate": {
+        "url": [
+            "https://github.com/vercel/geist-font/releases/download/$version/Geist.Mono.zip",
+            "https://github.com/vercel/geist-font/releases/download/$version/Geist.zip"
+        ]
+    },
+    "installer": {
+        "script": [
+            ". $bucketsdir\\mtb\\bin\\font_management.ps1",
+            "Install-Fonts -dir $dir"
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            ". $bucketsdir\\mtb\\bin\\font_management.ps1",
+            "Uninstall-Fonts -dir $dir"
+        ]
+    }
+}
