@@ -1,0 +1,8 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: powershell-trim-whitespace
+        name: Trim PowerShell Trailing Whitespace
+        entry: pwsh.exe -File hooks/pre-commit.ps1
+        language: system
+        files: \.(ps1|psm1)$
