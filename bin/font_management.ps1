@@ -15,3 +15,4 @@ function Uninstall-Fonts($dir) {
         Move-Item "$fontdir\$($_.Name)" -Destination "$fontdir\Deleted\$($_.Name)" -Force
     }
 }
+
