@@ -1,15 +1,15 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Geist is a new font family for Vercel, created by Vercel in collaboration with Basement Studio.",
     "homepage": "https://vercel.com/font",
     "license": "OFL-1.1",
     "url": [
-        "https://github.com/vercel/geist-font/releases/download/1.0.0/Geist.Mono.zip",
-        "https://github.com/vercel/geist-font/releases/download/1.0.0/Geist.zip"
+        "https://github.com/vercel/geist-font/releases/download/1.0.1/Geist.Mono.zip",
+        "https://github.com/vercel/geist-font/releases/download/1.0.1/Geist.zip"
     ],
     "hash": [
-        "804891b853484797101878e8638391d1d3b1c7b0673a3b0e89a4423664d016d2",
-        "3d19900ade9c33ba4773f29dcf77b6563335039440de60af3d34b050911eac44"
+        "19e81e92b8a97f784d57455b6de8fecbd945cdc8354e943e682362c087ec5b85",
+        "ae62c1e1ded446ff173ae799e530e3e093799a8ddb9c92197bfa43fea394a507"
     ],
     "checkver": {
         "github": "https://github.com/vercel/geist-font"
