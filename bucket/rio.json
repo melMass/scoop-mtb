@@ -8,17 +8,36 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/raphamorim/rio/releases/download/v0.0.27/Rio-portable.exe#/rio.exe",
-            "hash": "3d2be8c181da501f273299910c116668286116c5acd5fb30663f2abb4907ca31"
+            "url": [
+                "https://github.com/raphamorim/rio/releases/download/v0.0.27/Rio-portable.exe#/rio.exe",
+                "https://raw.githubusercontent.com/raphamorim/rio/main/misc/windows/rio.ico"
+            ],
+            "hash": [
+                "3d2be8c181da501f273299910c116668286116c5acd5fb30663f2abb4907ca31",
+                "dab2e4897add153ee287a92a8380a35a8fd0e4932f63fec7405b70917e6d6d4a"
+            ]
         }
     },
     "autoupdate": {
         "notes": "Thanks for using autoupdate, please test your updates!",
         "architecture": {
             "64bit": {
-                "url": "https://github.com/raphamorim/rio/releases/download/v$version/Rio-portable.exe#/rio.exe"
+                "url": [
+                    "https://github.com/raphamorim/rio/releases/download/v$version/Rio-portable.exe#/rio.exe",
+                    "https://raw.githubusercontent.com/raphamorim/rio/main/misc/windows/rio.ico"
+                ]
             }
         }
     },
-    "bin": "rio.exe"
+    "bin": [
+        ["rio.exe", "rio"]
+    ],
+    "shortcuts": [
+        [
+            "rio.exe",
+            "Rio - A modern terminal for the 21st century.",
+            "--working-dir %HOMEPATH%",
+            "rio.ico"
+        ]
+    ]
 }
