@@ -16,6 +16,7 @@ function Write-DebugOutput {
 
 # Define the paths to be added (these will be filled in during post_install)
 $pathsToAdd = @("{{PATHS_TO_BE_ADDED}}")
+$shouldChangeDir = '{{SHOULD_CD}}' -eq 'true'
 
 if ($debug) {
     Write-DebugOutput "====================== MTB DEBUG MODE: ON ======================" -ForegroundColor Cyan
@@ -34,6 +35,13 @@ foreach ($path in $pathsToAdd) {
 
 if ($debug) {
     Write-DebugOutput "====================== RUNNING THE COMMAND =====================" -ForegroundColor Cyan
+}
+
+if ($shouldChangeDir) {
+    cd "{{INSTALL_DIR}}"
+    if ($debug) {
+        Write-DebugOutput "Changed directory to '{{INSTALL_DIR}}'"
+    }
 }
 
 # Run the actual binary
