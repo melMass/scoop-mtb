@@ -1,0 +1,30 @@
+{
+    "version": "3.8.1",
+    "description": "Tooll 3 is an open source software to create realtime motion graphics.",
+    "homepage": "https://github.com/tooll3",
+    "license": "MIT",
+    "checkver": {
+        "github": "https://github.com/tooll3/t3"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/tooll3/t3/releases/download/v3.8.1/Tooll-v3.8.1.zip",
+            "hash": "58b9701be3e9624361b25a8480d82ded324e79c3dab110bb6ac5ebbf6c4dd650"
+        }
+    },
+    "autoupdate": {
+        "notes": "Thanks for using autoupdate, please test your updates!",
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/tooll3/t3/releases/download/v$version/Tooll-v$version.zip"
+            }
+        }
+    },
+    "shortcuts": [
+        [
+            "StartT3.exe",
+            "Tooll 3 is an open source software to create realtime motion graphics.",
+            "--working-dir %HOMEPATH%"
+        ]
+    ]
+}

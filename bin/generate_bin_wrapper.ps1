@@ -24,8 +24,9 @@ function GenerateBinaryWrapper {
 
     foreach ($binary in $Binaries) {
         $pathsString = $Paths -join '","'
-        $newContent = $newContent -replace '{{SHOULD_CD}}', $ChangeDirectory.IsPresent.ToString().ToLower()
-        $newContent = $content -replace '{{PATHS_TO_BE_ADDED}}', $pathsString
+        $newContent = $content -replace '{{SHOULD_CD}}', $ChangeDirectory.IsPresent.ToString().ToLower()
+        $newContent = $newContent -replace '{{INSTALL_DIR}}', "$InstallDir"
+        $newContent = $newContent -replace '{{PATHS_TO_BE_ADDED}}', $pathsString
         $newContent = $newContent -replace '{{ACTUAL_BINARY_NAME}}', "$InstallDir\\$binary"
         Set-Content -Path ($InstallDir + '\\' + $binary.Replace('.exe', '.ps1')) -Value $newContent
 
