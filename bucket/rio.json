@@ -29,17 +29,12 @@
             }
         }
     },
-    "bin": [
-        [
-            "rio.exe",
-            "rio"
-        ]
-    ],
+    "bin": [["rio.exe", "rio"]],
     "shortcuts": [
         [
             "rio.exe",
             "Rio - A modern terminal for the 21st century.",
-            "--working-dir %HOMEPATH%",
+            "--working-dir %USERPROFILE%",
             "rio.ico"
         ]
     ]
