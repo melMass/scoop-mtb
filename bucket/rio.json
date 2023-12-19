@@ -1,5 +1,5 @@
 {
-    "version": "0.0.32",
+    "version": "0.0.33",
     "description": "A hardware-accelerated GPU terminal emulator powered by WebGPU, focusing to run in desktops and browsers.",
     "homepage": "https://raphamorim.io/rio/",
     "license": "MIT",
@@ -9,11 +9,11 @@
     "architecture": {
         "64bit": {
             "url": [
-                "https://github.com/raphamorim/rio/releases/download/v0.0.32/Rio-portable.exe#/rio.exe",
+                "https://github.com/raphamorim/rio/releases/download/v0.0.33/Rio-portable.exe#/rio.exe",
                 "https://raw.githubusercontent.com/raphamorim/rio/main/misc/windows/rio.ico"
             ],
             "hash": [
-                "54ec13b7426a10fb61406560a3106f5e55f2ed1f0791b2fc3f856aaeb5c9d5f4",
+                "376c01f7b6f9d94255765aec52e6e8d7cf2a6559b3a922af6f9b028237af917f",
                 "dab2e4897add153ee287a92a8380a35a8fd0e4932f63fec7405b70917e6d6d4a"
             ]
         }
@@ -29,7 +29,12 @@
             }
         }
     },
-    "bin": [["rio.exe", "rio"]],
+    "bin": [
+        [
+            "rio.exe",
+            "rio"
+        ]
+    ],
     "shortcuts": [
         [
             "rio.exe",
