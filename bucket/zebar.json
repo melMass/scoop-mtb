@@ -1,24 +1,34 @@
 {
-	"version": "1.3.0",
-	"description": "Zebar is a tool for creating customizable and cross-platform taskbars, desktop widgets, and popups.",
-	"homepage": "https://github.com/glzr-io/zebar",
-	"license": "GPL-3.0",
-	"checkver": {
-		"github": "https://github.com/glzr-io/zebar"
-	},
-	"architecture": {
-		"64bit": {
-			"url": "https://github.com/glzr-io/zebar/releases/download/v1.3.0/Zebar_x64_v1.3.0.msi",
-			"hash": "28b9fc3b5fd880fe9a5bef4cdd0e45b556e0973d5dec6ddbbbb463890be684a3"
-		}
-	},
-	"autoupdate": {
-		"notes": "Thanks for using autoupdate, please test your updates!",
-		"architecture": {
-			"64bit": {
-				"url": "https://github.com/glzr-io/zebar/releases/download/v$version/Zebar_x64_v$version.msi"
-			}
-		}
-	},
-	"bin": ["zebar.exe"]
+    "version": "1.3.0",
+    "description": "Zebar is a tool for creating customizable and cross-platform taskbars, desktop widgets, and popups.",
+    "homepage": "https://github.com/glzr-io/zebar",
+    "license": "GPL-3.0",
+    "checkver": {
+        "github": "https://github.com/glzr-io/zebar"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/glzr-io/zebar/releases/download/v1.3.0/Zebar_x64_v1.3.0.msi",
+            "hash": "28b9fc3b5fd880fe9a5bef4cdd0e45b556e0973d5dec6ddbbbb463890be684a3"
+        }
+    },
+    "installer": {
+        "script": [
+            "$names = @('zebar.exe')",
+            "foreach ($name in $names) {",
+            "    Copy-Item \"$dir\\PFiles\\*\\$name\" \"$dir\" -Recurse -Force",
+            "}",
+            "Get-ChildItem \"$dir\" -Exclude $names | Remove-Item -Recurse -Force"
+        ]
+    },
+
+    "autoupdate": {
+        "notes": "Thanks for using autoupdate, please test your updates!",
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/glzr-io/zebar/releases/download/v$version/Zebar_x64_v$version.msi"
+            }
+        }
+    },
+    "bin": ["zebar.exe"]
 }
