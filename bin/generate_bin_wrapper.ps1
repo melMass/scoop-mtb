@@ -1,16 +1,7 @@
-# Helper function for colored output
-function Write-DebugOutput {
-    param (
-        [Parameter(Mandatory=$true)]
-        [string]$Message,
-        [System.ConsoleColor]$ForegroundColor = [System.ConsoleColor]::Yellow,
-        [System.ConsoleColor]$BackgroundColor = [System.ConsoleColor]::Black
-    )
-    Write-Host $Message -ForegroundColor $ForegroundColor -BackgroundColor $BackgroundColor
-}
+. $PSScriptRoot\common.ps1
 
-
-function GenerateBinaryWrapper {
+function GenerateBinaryWrapper
+{
     param (
         [string]$InstallDir,
         [string[]]$Binaries,
@@ -22,7 +13,8 @@ function GenerateBinaryWrapper {
 
     Write-DebugOutput "====================== MTB WRAPPER CREATION ======================" -ForegroundColor Cyan
 
-    foreach ($binary in $Binaries) {
+    foreach ($binary in $Binaries)
+    {
         $pathsString = $Paths -join '","'
         $newContent = $content -replace '{{SHOULD_CD}}', $ChangeDirectory.IsPresent.ToString().ToLower()
         $newContent = $newContent -replace '{{INSTALL_DIR}}', "$InstallDir"
@@ -31,6 +23,31 @@ function GenerateBinaryWrapper {
         Set-Content -Path ($InstallDir + '\\' + $binary.Replace('.exe', '.ps1')) -Value $newContent
 
         Write-DebugOutput "Generated wrapper for $binary with paths: $Paths"
+    }
+
+    Write-DebugOutput "===================================================================" -ForegroundColor Cyan
+}
+
+
+function GenerateVbsWrapper
+{
+    param (
+        [string]$InstallDir,
+        [string[]]$Binaries
+    )
+    Write-DebugOutput "====================== MTB (vbs) WRAPPER CREATION ======================" -ForegroundColor Cyan
+
+    foreach ($binary in $Binaries)
+    {
+        $vbsContent = @"
+Set WshShell = CreateObject("WScript.Shell")
+WshShell.Run chr(34) & "$InstallDir\\$binary" & Chr(34), 0
+Set WshShell = Nothing
+"@
+        $vbsFilePath = $InstallDir + '\\' + $binary.Replace('.exe', '.vbs')
+        Set-Content -Path $vbsFilePath -Value $vbsContent
+
+        Write-DebugOutput "Generated VBS wrapper for $binary at $vbsFilePath"
     }
 
     Write-DebugOutput "===================================================================" -ForegroundColor Cyan
