@@ -1,5 +1,5 @@
 {
-    "version": "6.2421.0",
+    "version": "6.2424.1",
     "description": "👩 Dashlane CLI - Access your secrets in your terminal, servers and CI/CD ",
     "homepage": "https://github.com/Dashlane/dashlane-cli",
     "license": "Apache-2.0",
@@ -8,12 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": [
-                "https://github.com/Dashlane/dashlane-cli/releases/download/v6.2421.0/dcli-win-x64-signed.exe#/dcli.exe"
-            ],
-            "hash": [
-                "b319742c380a0a0fe039088712543b4d620d007a280e191d18b3ec32d6a8bdf2"
-            ]
+            "url": "https://github.com/Dashlane/dashlane-cli/releases/download/v6.2424.1/dcli-win-x64-signed.exe#/dcli.exe",
+            "hash": "c2c6c998c6d26afb5d3516fcde4c807ba260d70fc71aa44f55bf75e089678a2d"
         }
     },
     "autoupdate": {
@@ -24,5 +20,10 @@
             }
         }
     },
-    "bin": [["dcli.exe", "dcli"]]
+    "bin": [
+        [
+            "dcli.exe",
+            "dcli"
+        ]
+    ]
 }
