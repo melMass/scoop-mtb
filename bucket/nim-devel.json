@@ -1,0 +1,39 @@
+{
+    "version": "nightly",
+    "description": "A statically typed compiled systems programming language, which combines successful concepts from mature languages like Python, Ada and Modula.",
+    "homepage": "https://nim-lang.org/",
+    "license": "MIT",
+    "suggest": {
+        "MinGW": "mingw-winlibs"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/nim-lang/nightlies/releases/download/latest-devel/windows_x64.zip"
+        },
+        "32bit": {
+            "url": "https://github.com/nim-lang/nightlies/releases/download/latest-devel/windows_x32.zip"
+        }
+    },
+    "extract_dir": "nim-2.1.1",
+    "post_install": [
+        "# Copy Nimble package",
+        "Copy-Item -Recurse \"$dir\\dist\\nimble\\src\\nimblepkg\" \"$dir\\bin\""
+    ],
+    "bin": [
+        "bin\\nim.exe",
+        "bin\\nimble.exe",
+        "bin\\nimgrab.exe",
+        "bin\\nimgrep.exe",
+        "bin\\nimpretty.exe",
+        "bin\\nimsuggest.exe",
+        "bin\\vccexe.exe",
+        "bin\\testament.exe"
+    ],
+    "persist": "config",
+    "installer": {
+        "script": "Add-Path \"$env:USERPROFILE\\.nimble\\bin\" $global"
+    },
+    "uninstaller": {
+        "script": "Remove-Path \"$env:USERPROFILE\\.nimble\\bin\" $global"
+    }
+}
