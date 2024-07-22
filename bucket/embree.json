@@ -1,5 +1,5 @@
 {
-    "version": "4.3.2",
+    "version": "4.3.3",
     "description": "Intel's ray tracing kernels",
     "homepage": "https://www.embree.org/",
     "license": "Apache License",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/embree/embree/releases/download/v4.3.2/embree-4.3.2.x64.windows.zip",
-            "hash": "1b7e1cc3cf01e1084e11e49d8c5dd9a7a3daddf599cf781a97d9a2240821a018"
+            "url": "https://github.com/embree/embree/releases/download/v4.3.3/embree-4.3.3.x64.windows.zip",
+            "hash": "d4c07f88df9f009dd84e4e9b9dcec32ad7d96f927bd88de00b721b0923d481a9"
         }
     },
     "autoupdate": {
