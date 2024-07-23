@@ -14,9 +14,9 @@
     },
     "installer": {
         "script": [
-            "$names = @('zebar.exe')",
+            "$names = @('zebar.exe', 'resources')",
             "foreach ($name in $names) {",
-            "    Copy-Item \"$dir\\PFiles\\*\\$name\" \"$dir\" -Recurse -Force",
+            "Copy-Item \"$dir\\PFiles\\glzr.io\\Zebar\\$name\" \"$dir\" -Recurse -Force",
             "}",
             "Get-ChildItem \"$dir\" -Exclude $names | Remove-Item -Recurse -Force"
         ]
