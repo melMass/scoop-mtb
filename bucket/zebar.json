@@ -25,7 +25,7 @@
         "notes": "Thanks for using autoupdate, please test your updates!",
         "architecture": {
             "64bit": {
-                "url": "https://github.com/glzr-io/zebar/releases/download/v$version/zebar-v$version-x64.msi"
+                "url": "https://github.com/glzr-io/zebar/releases/download/v$version/zebar-v$version-opt1-x64.msi"
             }
         }
     },
