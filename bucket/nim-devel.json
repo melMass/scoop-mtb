@@ -14,11 +14,11 @@
             "url": "https://github.com/nim-lang/nightlies/releases/download/latest-devel/windows_x32.zip"
         }
     },
-    "extract_dir": "nim-2.1.1",
     "post_install": [
         "# Copy Nimble package",
         "Copy-Item -Recurse \"$dir\\dist\\nimble\\src\\nimblepkg\" \"$dir\\bin\""
     ],
+    "env_add_path": ["bin"],
     "bin": [
         "bin\\nim.exe",
         "bin\\nimble.exe",
@@ -31,7 +31,12 @@
     ],
     "persist": "config",
     "installer": {
-        "script": "Add-Path \"$env:USERPROFILE\\.nimble\\bin\" $global"
+        "script": [
+            "$latestDir = Get-ChildItem -Path $dir | Sort-Object LastWriteTime | Select-Object -Last 1",
+
+            "Move-Item -Path \"$($latestDir.FullName)\\*\" -Destination $dir -Force",
+            "Add-Path \"$env:USERPROFILE\\.nimble\\bin\" $global"
+        ]
     },
     "uninstaller": {
         "script": "Remove-Path \"$env:USERPROFILE\\.nimble\\bin\" $global"
