@@ -1,0 +1,33 @@
+{
+    "version": "1.17.0",
+    "description": "Deskflow lets you share one mouse and keyboard between multiple computers on Windows, macOS and Linux. It's like a software KVM (but without video). ",
+    "homepage": "https://github.com/deskflow/deskflow",
+    "license": "GPL-2.0",
+    "checkver": {
+        "github": "https://github.com/deskflow/deskflow"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/deskflow/deskflow/releases/download/v1.17.0/deskflow-1.17.0.0_win64.msi",
+            "hash": "f70a21f8e4f415b47ad34aa30bddc8d929ad42dbaee071cbed40d577bd1e0f49"
+        }
+    },
+    "installer": {
+        "script": [
+            "$names = @('deskflow.exe')",
+            "foreach ($name in $names) {",
+            "Copy-Item \"$dir\\PFiles\\glzr.io\\Zebar\\$name\" \"$dir\" -Recurse -Force",
+            "}",
+            "Get-ChildItem \"$dir\" -Exclude $names | Remove-Item -Recurse -Force"
+        ]
+    },
+    "autoupdate": {
+        "notes": "Thanks for using autoupdate, please test your updates!",
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/deskflow/deskflow/releases/download/v$version/deskflow-$version.0_win64.msi"
+            }
+        }
+    },
+    "bin": "zebar.exe"
+}
