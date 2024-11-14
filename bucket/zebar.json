@@ -1,5 +1,5 @@
 {
-    "version": "2.5.0",
+    "version": "2.5.1",
     "description": "Zebar is a tool for creating customizable and cross-platform taskbars, desktop widgets, and popups.",
     "homepage": "https://github.com/glzr-io/zebar",
     "license": "GPL-3.0",
@@ -8,8 +8,8 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/glzr-io/zebar/releases/download/v2.5.0/zebar-v2.5.0-opt1-x64.msi",
-            "hash": "a99124762eee2bdac95bc71fb570ddefc4afd4f742b3bcbe9e49cf5d50b7b9b6"
+            "url": "https://github.com/glzr-io/zebar/releases/download/v2.5.1/zebar-v2.5.1-opt1-x64.msi",
+            "hash": "ec8bb18dbc4d26e26f7817cc116c7b53bc883804cc815faaf9b1c2c4bc5aa09a"
         }
     },
     "installer": {
