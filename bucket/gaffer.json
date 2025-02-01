@@ -1,5 +1,5 @@
 {
-    "version": "1.5.4.0",
+    "version": "1.5.4.1",
     "description": "Gaffer is a node-based application for lookdev, lighting and automation",
     "homepage": "https://www.gafferhq.org",
     "license": "BSD-3-Clause",
@@ -8,9 +8,9 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/GafferHQ/gaffer/releases/download/1.5.4.0/gaffer-1.5.4.0-windows.zip",
-            "hash": "acc49ab50b3f9beb3a7c56b95ad15831f8f16509011b2603353b7bb0da6b6e30",
-            "extract_dir": "gaffer-1.5.4.0-windows"
+            "url": "https://github.com/GafferHQ/gaffer/releases/download/1.5.4.1/gaffer-1.5.4.1-windows.zip",
+            "hash": "8f2030e631878508ca146ce944a87fd7995be05c6688bb061280caf04f6be9d8",
+            "extract_dir": "gaffer-1.5.4.1-windows"
         }
     },
     "autoupdate": {
